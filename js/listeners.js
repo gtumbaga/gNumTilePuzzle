@@ -12,12 +12,11 @@ document.getElementById('btn-reset').addEventListener(clickOrTouch, handleReset)
 document.getElementById("zoomChooser").addEventListener("change", handleSider)
 
 // anti double tap zoom (i hope)
-document.addEventListener(
-    "touchmove",
-    function(event) {
-        if (event.scale !== 1) {
-            event.preventDefault();
-        }
-    },
-    { passive: false }
-);
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+    let now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);

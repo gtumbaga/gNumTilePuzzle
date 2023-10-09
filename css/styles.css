@@ -4,6 +4,7 @@
   --boardpadding: 40px;
   --framescale: 1.0;
 }
+*{touch-action: pan-x pan-y;} /*only allow scroll gestures*/
 #ver {
     font-size: 12px;
     color: #fff;
@@ -11,13 +12,13 @@
 
 html {
     /* hopefully this will disable double tap zoom */
-    touch-action: manipulation;
+    touch-action: pan-x pan-y;
     width: 100vw;
     overflow-x: hidden;
 }
 body {
     /* hopefully this will disable double tap zoom */
-    touch-action: manipulation;
+    touch-action: pan-x pan-y;
     font-size: 20px;
     background: #333;
     width: 100vw;

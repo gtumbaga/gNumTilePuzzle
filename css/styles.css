@@ -20,14 +20,14 @@ body {
     position: relative;
     margin: 10px;
     width: calc(var(--boardsize) + (var(--boardpadding) * 2));
-    margin-left: calc((var(--boardsize) / 2) * -1);
+    margin-left: calc(((var(--boardsize) + (var(--boardpadding) * 2)) / 2) * -1);
     left: 50%;
     text-align: center;
 }
 
 .frame {
     margin: 10px;
-    margin-left: calc((var(--boardsize) / 2) * -1);
+    margin-left: calc(((var(--boardsize) + (var(--boardpadding) * 2)) / 2) * -1);
     width: calc(var(--boardsize) + (var(--boardpadding) * 2));
     height: calc(var(--boardsize) + (var(--boardpadding) * 2));
     transition-property: width, height;

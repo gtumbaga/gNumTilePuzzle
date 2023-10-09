@@ -51,6 +51,8 @@ button {
     margin-bottom: 10px;
 }
 .frame {
+    /* hopefully this will disable double tap zoom */
+    touch-action: manipulation;
     transform: scale(var(--framescale));;
     transform-origin:center top;
     /*margin: 10px;*/

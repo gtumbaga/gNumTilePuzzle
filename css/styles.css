@@ -9,7 +9,15 @@
     color: #fff;
 }
 
+html {
+    /* hopefully this will disable double tap zoom */
+    touch-action: manipulation;
+    width: 100vw;
+    overflow-x: hidden;
+}
 body {
+    /* hopefully this will disable double tap zoom */
+    touch-action: manipulation;
     font-size: 20px;
     background: #333;
     width: 100vw;

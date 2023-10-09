@@ -77,7 +77,8 @@ body {
     box-sizing: border-box;
 
     transition-property: left, top;
-    transition-duration: .180s;
+    transition-duration: .300s;
+    transition-timing-function: ease-out;
 
     box-shadow:inset 0px 1px 0px 0px #bbdaf7;
     background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);

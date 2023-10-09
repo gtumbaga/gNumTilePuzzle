@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- version: v0.001 -->
+    <!-- version: v0.003 -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
@@ -9,12 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>gNumTilePuzzle</title>
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/styles.css?ver=v0.002">
-    <script src="./js/script.js?ver=v0.002" /></script>
+    <link rel="stylesheet" href="./css/styles.css?ver=v0.003">
 </head>
 <body ontouchstart="() => {}">
     <div class="frame">
-        <div class="tilesHolder">
+        <div class="tilesHolder" id="tilesHolder">
 
             <!--3x3-->
             <!--<div class="tile col-1 row-1" data-col="1" data-row="1" id="tile-1">1</div>-->
@@ -28,37 +27,28 @@
             <!--<div class="tile col-1 row-3" data-col="1" data-row="3" id="tile-7">7</div>-->
             <!--<div class="tile col-2 row-3" data-col="2" data-row="3" id="tile-8">8</div>-->
 
-            <!--4x4-->
-            <div class="tile col-1 row-1" data-col="1" data-row="1" id="tile-1">1</div>
-            <div class="tile col-2 row-1" data-col="2" data-row="1" id="tile-2">2</div>
-            <div class="tile col-3 row-1" data-col="3" data-row="1" id="tile-3">3</div>
-            <div class="tile col-4 row-1" data-col="4" data-row="1" id="tile-4">4</div>
-
-            <div class="tile col-1 row-2" data-col="1" data-row="2" id="tile-5">5</div>
-            <div class="tile col-2 row-2" data-col="2" data-row="2" id="tile-6">6</div>
-            <div class="tile col-3 row-2" data-col="3" data-row="2" id="tile-7">7</div>
-            <div class="tile col-4 row-2" data-col="4" data-row="2" id="tile-8">8</div>
-
-            <div class="tile col-1 row-3" data-col="1" data-row="3" id="tile-9">9</div>
-            <div class="tile col-2 row-3" data-col="2" data-row="3" id="tile-10">10</div>
-            <div class="tile col-3 row-3" data-col="3" data-row="3" id="tile-11">11</div>
-            <div class="tile col-4 row-3" data-col="4" data-row="3" id="tile-12">12</div>
-
-            <div class="tile col-1 row-4" data-col="1" data-row="4" id="tile-13">13</div>
-            <div class="tile col-2 row-4" data-col="2" data-row="4" id="tile-14">14</div>
-            <div class="tile col-3 row-4" data-col="3" data-row="4" id="tile-15">15</div>
 
 
         </div>
     </div>
-    <div>
+    <div class="cta-holder">
         <button id="btn-randomize">Randomzie</button>
-    </div>
-    <div>
         <button id="btn-reset">Reset</button>
+        <div>
+            <select id="gameSize" onchange="handleSetGameSize(this.value)">
+                <option value="3" selected>3x3 (8 Puzzle)</option>
+                <option value="4" >4x4 (15 Puzzle)</option>
+                <option value="5" >5x5 (24 Puzzle)</option>
+                <option value="6" >6x6 (35 Puzzle)</option>
+                <option value="7" >7x7 (48 Puzzle)</option>
+            </select>
+        </div>
+        <div>
+            <label id="ver" class="noselect">ver: v0.003</label>
+        </div>
     </div>
-    <label id="ver" class="noselect">ver: v0.001</label>
 
-    <script src="./js/listeners.js?ver=v0.002" /></script>
+    <script src="./js/script.js?ver=v0.003" /></script>
+    <script src="./js/listeners.js?ver=v0.003" /></script>
 </body>
 </html>

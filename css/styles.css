@@ -1,9 +1,11 @@
 :root {
   --boardsize: 400px;
-  --boardpadding: 36px;
+  --tilesize: 100px;
+  --boardpadding: 40px;
 }
 
 body {
+    font-size: 20px;
     background: #333;
 }
 
@@ -14,47 +16,60 @@ body {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
+.cta-holder {
+    position: relative;
+    margin: 10px;
+    width: calc(var(--boardsize) + (var(--boardpadding) * 2));
+    margin-left: calc((var(--boardsize) / 2) * -1);
+    left: 50%;
+    text-align: center;
+}
 
 .frame {
-    margin: 20px;
+    margin: 10px;
+    margin-left: calc((var(--boardsize) / 2) * -1);
     width: calc(var(--boardsize) + (var(--boardpadding) * 2));
     height: calc(var(--boardsize) + (var(--boardpadding) * 2));
+    transition-property: width, height;
+    transition-duration: .200s;
+    transition-timing-function: ease-out;
 
-  background-color: #ddc;
-  border: solid 5vmin #eee;
-  border-bottom-color: #fff;
-  border-left-color: #eee;
-  border-radius: 2px;
-  border-right-color: #eee;
-  border-top-color: #ddd;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset,
+    background-color: #ddc;
+    border: solid 40px #eee;
+    border-bottom-color: #fff;
+    border-left-color: #eee;
+    border-radius: 2px;
+    border-right-color: #eee;
+    border-top-color: #ddd;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset,
     0 5px 10px 5px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  display: inline-block;
-  position: relative;
-  text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    left: 50%;
 
 }
 
   .frame:before {
     border-radius: 2px;
-    bottom: -2vmin;
+    bottom: -16px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
     content: "";
-    left: -2vmin;
+    left: -16px;
     position: absolute;
-    right: -2vmin;
-    top: -2vmin;
+    right: -16px;
+    top: -16px;
   }
   .frame:after {
     border-radius: 2px;
-    bottom: -2.5vmin;
+    bottom: -20px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
     content: "";
-    left: -2.5vmin;
+    left: -20px;
     position: absolute;
-    right: -2.5vmin;
-    top: -2.5vmin;
+    right: -20px;
+    top: -20px;
   }
 
 .tilesHolder {
@@ -63,14 +78,17 @@ body {
     position: relative;
     background: #ccc;
     z-index: 999;
+
+
 }
 .tile {
+    display: none;
     font-size: 30px;
     font-family: arial;
     font-weight: bold;
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: var(--tilesize);
+    height: var(--tilesize);
     text-align: center;
     line-height: 100px;
 

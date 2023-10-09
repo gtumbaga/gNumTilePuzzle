@@ -6,5 +6,7 @@ Array.from(allTiles).forEach(function(singleTile) {
     singleTile.addEventListener(clickOrTouch, handleClick);
 });
 
-document.getElementById('btn-randomize').addEventListener('click', handleRandomize);
-document.getElementById('btn-reset').addEventListener('click', handleReset);
+document.getElementById('btn-randomize').addEventListener(clickOrTouch, handleRandomize);
+document.getElementById('btn-reset').addEventListener(clickOrTouch, handleReset);
+
+document.getElementById("zoomChooser").addEventListener("change", handleSider)

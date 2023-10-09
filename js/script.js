@@ -136,6 +136,12 @@ const getRandomIntInclusive = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
 
+const handleSider = (e) => {
+    console.log(e.target.value);
+    zoomScale = parseFloat(e.target.value);
+    rootSelector.style.setProperty('--framescale',`${zoomScale}`);
+}
+
 
 
 

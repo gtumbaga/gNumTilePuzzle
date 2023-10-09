@@ -1,0 +1,35 @@
+body {
+    background: #333;
+}
+.tilesHolder {
+    height: 400px;
+    width: 400px;
+    position: relative;
+    background: #fff;
+}
+.tile {
+    position: absolute;
+    background: #000;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    transition-property: left, top;
+    transition-duration: .180s;
+}
+
+.col-1 { left: 0; }
+.col-2 { left: 100px; }
+.col-3 { left: 200px; }
+.col-4 { left: 300px; }
+
+.row-1 { top: 0}
+.row-2 { top: 100px}
+.row-3 { top: 200px}
+.row-4 { top: 300px}

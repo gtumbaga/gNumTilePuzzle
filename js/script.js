@@ -29,10 +29,13 @@ const handleDrawTileDivs = () => {
 }
 
 const handleRandomize = () => {
+    console.log('handleRandomize clicked');
     const totalTileCount = (maxTile*maxTile) -1;
     for (let i = 0; i < (totalTileCount*200); i++) {
         const rng = getRandomIntInclusive(1, totalTileCount);
-        document.getElementById(`tile-${rng}`).click();
+        tile = document.getElementById(`tile-${rng}`);
+        console.log('what do i do with the tile?', tile.dataset);
+        handleClick(tile);
     }
 
 }
@@ -88,8 +91,15 @@ const handleSetGameSize = (size) => {
 
 const handleClick = (e) => {
     console.log('click worked');
-    const col = parseInt(e.target.dataset.col);
-    const row = parseInt(e.target.dataset.row);
+    let col;
+    let row;
+    if (e.target) {
+        col = parseInt(e.target.dataset.col);
+        row = parseInt(e.target.dataset.row);
+    } else {
+        col = parseInt(e.dataset.col);
+        row = parseInt(e.dataset.row);
+    }
 
     // if row matches, check col movement
     if (row == openRow) {
@@ -102,9 +112,15 @@ const handleClick = (e) => {
         }
 
         if (newCol) {
-            e.target.classList.remove(`col-${col}`);
-            e.target.classList.add(`col-${newCol}`);
-            e.target.dataset.col = newCol;
+            if (e.target) {
+                e.target.classList.remove(`col-${col}`);
+                e.target.classList.add(`col-${newCol}`);
+                e.target.dataset.col = newCol;
+            } else {
+                e.classList.remove(`col-${col}`);
+                e.classList.add(`col-${newCol}`);
+                e.dataset.col = newCol;
+            }
             openCol = col;
         }
     }
@@ -120,9 +136,15 @@ const handleClick = (e) => {
         }
 
         if (newRow) {
-            e.target.classList.remove(`row-${row}`);
-            e.target.classList.add(`row-${newRow}`);
-            e.target.dataset.row = newRow;
+            if (e.target) {
+                e.target.classList.remove(`row-${row}`);
+                e.target.classList.add(`row-${newRow}`);
+                e.target.dataset.row = newRow;
+            } else {
+                e.classList.remove(`row-${row}`);
+                e.classList.add(`row-${newRow}`);
+                e.dataset.row = newRow;
+            }
             openRow = row;
         }
     }
@@ -140,6 +162,7 @@ const handleSider = (e) => {
     console.log(e.target.value);
     zoomScale = parseFloat(e.target.value);
     rootSelector.style.setProperty('--framescale',`${zoomScale}`);
+    document.getElementById('zscale').innerHTML = zoomScale;
 }
 
 

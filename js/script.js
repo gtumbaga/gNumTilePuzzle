@@ -2,8 +2,12 @@ const maxTile = 4;
 let openCol = maxTile;
 let openRow = maxTile;
 
-const clickTest = (e) => {
-    console.log('click worked', e);
+const handleRandomize = () => {
+    for (let i = 0; i < 3000; i++) {
+        const rng = getRandomIntInclusive(1, 15);
+        document.getElementById(`tile-${rng}`).click();
+    }
+
 }
 const handleClick = (e) => {
     console.log('click worked');
@@ -48,3 +52,10 @@ const handleClick = (e) => {
 
 
 }
+
+const getRandomIntInclusive = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+}
+

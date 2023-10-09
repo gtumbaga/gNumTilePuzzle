@@ -1,14 +1,42 @@
-const maxTile = 4;
+let maxTile = 4;
 let openCol = maxTile;
 let openRow = maxTile;
 
+
 const handleRandomize = () => {
+    const totalTileCount = (maxTile*maxTile) -1;
     for (let i = 0; i < 3000; i++) {
-        const rng = getRandomIntInclusive(1, 15);
+        const rng = getRandomIntInclusive(1, totalTileCount);
         document.getElementById(`tile-${rng}`).click();
     }
 
 }
+
+const handleReset = () => {
+    const totalTileCount = (maxTile*maxTile) -1;
+    let counter = 1;
+    for (let row = 1; row < 5; row++) {
+        for (let col = 1; col < 5; col++) {
+            console.log(`tile: ${counter} col: ${col}, row: ${row} `);
+
+            const tileDiv = document.getElementById(`tile-${counter}`);
+            tileDiv.className = `tile col-${col} row-${row}`;
+            tileDiv.dataset.col = col;
+            tileDiv.dataset.row = row;
+
+            counter++;
+            if (counter > totalTileCount) {
+                break;
+            }
+        }
+        if (counter > totalTileCount) {
+            break;
+        }
+    }
+    openCol = maxTile;
+    openRow = maxTile;
+}
+
 const handleClick = (e) => {
     console.log('click worked');
     const col = parseInt(e.target.dataset.col);

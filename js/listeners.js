@@ -7,3 +7,4 @@ Array.from(allTiles).forEach(function(singleTile) {
 });
 
 document.getElementById('btn-randomize').addEventListener(clickOrTouch, handleRandomize);
+document.getElementById('btn-reset').addEventListener(clickOrTouch, handleReset);

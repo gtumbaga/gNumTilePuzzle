@@ -15,7 +15,7 @@ document.getElementById("zoomChooser").addEventListener("change", handleSider)
 let lastTouchEnd = 0;
 document.addEventListener('touchend', function (event) {
     let now = (new Date()).getTime();
-    if (now - lastTouchEnd <= 300) {
+    if (now - lastTouchEnd <= 500) {
         event.preventDefault();
     }
     lastTouchEnd = now;

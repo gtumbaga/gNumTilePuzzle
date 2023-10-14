@@ -3,7 +3,7 @@ let maxTile = 7;
 let openCol = maxTile;
 let openRow = maxTile;
 const rootSelector = document.querySelector(':root');
-const audio_click = new Audio('./sfx/click-21156.mp3');
+//const audio_click = new Audio('./sfx/click-21156.mp3');
 let useAudio = true;
 
 
@@ -95,7 +95,7 @@ const handleClick = (e, skipSound = false) => {
     //console.log('click worked');
     setTimeout(() => {
         if (!skipSound && useAudio) {
-            audio_click.play();
+            //audio_click.play();
         }
     }, 10)
     let col;

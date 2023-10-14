@@ -12,7 +12,7 @@ document.getElementById('btn-settings').addEventListener(clickOrTouch, handleSho
 document.getElementById('btn-closeModal').addEventListener(clickOrTouch, handleCloseModal);
 document.getElementById('btn-minus').addEventListener(clickOrTouch, handleZoomDown);
 document.getElementById('btn-plus').addEventListener(clickOrTouch, handleZoomUp);
-document.getElementById('useAudio').addEventListener("change", handleSoundToggle);
+//document.getElementById('useAudio').addEventListener("change", handleSoundToggle);
 
 document.getElementById("zoomChooser").addEventListener("change", handleSider)
 

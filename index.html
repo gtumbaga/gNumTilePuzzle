@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- version: v0.019 -->
+    <!-- version: v0.020 -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
@@ -10,7 +10,7 @@
     <meta name="HandheldFriendly" content="true" />
     <title>gNumTilePuzzle</title>
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/styles.css?ver=v0.019">
+    <link rel="stylesheet" href="./css/styles.css?ver=v0.020">
 </head>
 <body ontouchstart="() => {}">
     <button class="btn-settings" id="btn-settings">&#9881;</button>
@@ -35,11 +35,12 @@
             </div>
     </div>
     </div>
-    <div class="modal" id="settingsModal">
+    <div class="modal show" id="settingsModal">
         <div class="modalBG"> </div>
         <div class="modalBody">
             <button class="btn-close" id="btn-closeModal">&#x2715;</button>
             <div class="cta-holder">
+                <div class="modalTitle">Number Puzzle</div>
                 <div class="actions">
                     <button id="btn-randomize">Randomize</button>
                     <button id="btn-reset">Reset</button>
@@ -53,20 +54,23 @@
                         <option value="7" >7x7 (48 Puzzle)</option>
                     </select>
                 </div>
-                <div class="slider-holder">
+                <div class="slider-holder clearfix">
                     zoom scale: <span id="zscale">1.0</span><br/>
                     <button class="btn-minus" id="btn-minus">&minus;</button>
                     <input type="range" min="0.1" max="2" value="1" step="0.1" class="slider" id="zoomChooser">
                     <button class="btn-plus" id="btn-plus">&plus;</button>
                 </div>
+                <div class="sound-toggle-holder">
+                    <label ><input type="checkbox" name="useAudio" id="useAudio" checked /> Sound On</label>
+                </div>
                 <div>
-                    <label id="ver" class="noselect">ver: v0.019</label>
+                    <label id="ver" class="noselect">ver: v0.020</label>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="./js/script.js?ver=v0.019" /></script>
-    <script src="./js/listeners.js?ver=v0.019" /></script>
+    <script src="./js/script.js?ver=v0.020" /></script>
+    <script src="./js/listeners.js?ver=v0.020" /></script>
 </body>
 </html>

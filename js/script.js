@@ -3,6 +3,8 @@ let maxTile = 7;
 let openCol = maxTile;
 let openRow = maxTile;
 const rootSelector = document.querySelector(':root');
+const audio_click = new Audio('./sfx/click-21156.mp3');
+let useAudio = true;
 
 
 const init = () => {
@@ -35,7 +37,7 @@ const handleRandomize = () => {
         const rng = getRandomIntInclusive(1, totalTileCount);
         tile = document.getElementById(`tile-${rng}`);
         console.log('what do i do with the tile?', tile.dataset);
-        handleClick(tile);
+        handleClick(tile, true);
     }
 
 }
@@ -89,8 +91,11 @@ const handleSetGameSize = (size) => {
     handleReset();
 }
 
-const handleClick = (e) => {
-    console.log('click worked');
+const handleClick = (e, skipSound = false) => {
+    //console.log('click worked');
+    if (!skipSound && useAudio) {
+        audio_click.play();
+    }
     let col;
     let row;
     if (e.target) {
@@ -184,6 +189,11 @@ const handleCloseModal = () => {
 }
 const handleShowModal = () => {
     document.getElementById('settingsModal').classList.add('show');
+}
+
+const handleSoundToggle = (e) => {
+    //console.log(e.target.checked);
+    useAudio = e.target.checked;
 }
 
 

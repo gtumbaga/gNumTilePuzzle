@@ -93,9 +93,11 @@ const handleSetGameSize = (size) => {
 
 const handleClick = (e, skipSound = false) => {
     //console.log('click worked');
-    if (!skipSound && useAudio) {
-        audio_click.play();
-    }
+    setTimeout(() => {
+        if (!skipSound && useAudio) {
+            audio_click.play();
+        }
+    }, 10)
     let col;
     let row;
     if (e.target) {

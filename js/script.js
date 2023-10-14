@@ -164,6 +164,27 @@ const handleSider = (e) => {
     rootSelector.style.setProperty('--framescale',`${zoomScale}`);
     document.getElementById('zscale').innerHTML = zoomScale;
 }
+const handleZoomDown = () => {
+    const slider = document.getElementById('zoomChooser');
+    slider.stepDown(1);
+    zoomScale = parseFloat(slider.value);
+    rootSelector.style.setProperty('--framescale',`${zoomScale}`);
+    document.getElementById('zscale').innerHTML = zoomScale;
+}
+const handleZoomUp = () => {
+    const slider = document.getElementById('zoomChooser');
+    slider.stepUp(1);
+    zoomScale = parseFloat(slider.value);
+    rootSelector.style.setProperty('--framescale',`${zoomScale}`);
+    document.getElementById('zscale').innerHTML = zoomScale;
+}
+
+const handleCloseModal = () => {
+    document.getElementById('settingsModal').classList.remove('show');
+}
+const handleShowModal = () => {
+    document.getElementById('settingsModal').classList.add('show');
+}
 
 
 

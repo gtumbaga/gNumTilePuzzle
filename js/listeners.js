@@ -8,6 +8,10 @@ Array.from(allTiles).forEach(function(singleTile) {
 
 document.getElementById('btn-randomize').addEventListener(clickOrTouch, handleRandomize);
 document.getElementById('btn-reset').addEventListener(clickOrTouch, handleReset);
+document.getElementById('btn-settings').addEventListener(clickOrTouch, handleShowModal);
+document.getElementById('btn-closeModal').addEventListener(clickOrTouch, handleCloseModal);
+document.getElementById('btn-minus').addEventListener(clickOrTouch, handleZoomDown);
+document.getElementById('btn-plus').addEventListener(clickOrTouch, handleZoomUp);
 
 document.getElementById("zoomChooser").addEventListener("change", handleSider)
 

@@ -14,21 +14,84 @@ html {
     /* hopefully this will disable double tap zoom */
     touch-action: pan-x pan-y;
     width: 100vw;
-    overflow-x: hidden;
+    height: 100vh;
+    overflow: hidden;
 }
 body {
+    position: relative;
+
     /* hopefully this will disable double tap zoom */
     touch-action: pan-x pan-y;
     font-size: 20px;
     background: #333;
     width: 100vw;
-    overflow-x: hidden;
+    height: 100vh;
+    overflow: hidden;
 }
 
 button {
     cursor: pointer;
 }
 
+.modal {
+    visibility:hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.modal.show {
+    visibility:visible;
+    z-index: 1000;
+}
+.modal .modalBG {
+    position: absolute;
+    background: rgba(33,33,33,0.0);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.modal.show .modalBG {
+    background: rgba(33,33,33,0.8);
+    transition: background 1s ease 0s;
+}
+.modal .modalBody {
+    position: absolute;
+    border: solid 8px #ccc;
+    width: 360px;
+    height: 360px;
+    margin: 0 auto;
+    left: 50%;
+    margin-left: -188px;
+    background: #333;
+    bottom: -360px;
+    background: #333;
+    border-radius: 8px;
+    transition: bottom 1s ease 0s;
+}
+.modal.show .modalBody {
+    bottom: 50px;
+}
+
+.modal .btn-close {
+    position: absolute;
+    right: -14px;
+    top: -14px;
+    background: #000;
+    border: solid 2px #fff;
+    border-radius: 40px;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 .noselect,
 .tile
 {
@@ -37,19 +100,40 @@ button {
     user-select: none; /* Standard syntax */
 }
 .cta-holder {
-    position: relative;
-    margin: 10px;
-    width: calc(var(--boardsize) + (var(--boardpadding) * 2));
-    margin-left: calc(((var(--boardsize) + (var(--boardpadding) * 2)) / 2) * -1);
-    left: 50%;
+    margin: 100px 10px;
     text-align: center;
+}
+.actions {
+    margin-bottom: 10px;
+}
+.actions button {
+    border: none;
+    border-radius: 4px;
+    background: #fff;
 }
 
 .slider-holder {
     color: #fff;
+    margin-top: 10px;
+}
+.slider-holder button {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 4px;
+    background: #fff;
+}
+.slider-holder .btn-minus {
+    float: left;
+}
+.slider-holder .btn-plus {
+    float: right;
 }
 .slider-holder input {
-    width: 300px;
+    width: 200px;
 }
 
 .frameOutside {
@@ -148,6 +232,21 @@ button {
 
     text-decoration:none;
     text-shadow:0px 1px 0px #528ecc;
+}
+
+.btn-settings {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    font-size: 30px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 30px;
+    width: 30px;
+    background: #fff;
+    line-height: 30px;
+    border-radius: 30px;
 }
 
 .col-1 { left: 0; }

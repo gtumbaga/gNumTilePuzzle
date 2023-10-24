@@ -168,7 +168,7 @@ button {
     margin-left: calc(((var(--boardsize) + (var(--boardpadding) * 2)) / 2) * -1);
     width: calc(var(--boardsize) + (var(--boardpadding) * 2));
     height: calc(var(--boardsize) + (var(--boardpadding) * 2));
-    transition-property: width, height;
+    transition-property: transform;
     transition-duration: .200s;
     transition-timing-function: ease-out;
 

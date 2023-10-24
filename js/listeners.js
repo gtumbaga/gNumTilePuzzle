@@ -25,3 +25,5 @@ document.addEventListener('touchend', function (event) {
     }
     lastTouchEnd = now;
 }, false);
+
+window.addEventListener("resize", autoSetGameSize);

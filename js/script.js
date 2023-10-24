@@ -10,6 +10,10 @@ let useAudio = true;
 const init = () => {
     handleDrawTileDivs();
     handleSetGameSize(3);
+    autoSetGameSize();
+    //setTimeout(() => {
+        //autoSetGameSize();
+    //}, 200);
 }
 
 const handleDrawTileDivs = () => {
@@ -68,6 +72,28 @@ const handleReset = () => {
     openRow = maxTile;
 }
 
+const autoSetGameSize = async () => {
+    let zoomScale = 0.10;
+
+    const scaleStep = 0.05;
+
+    const viewportHeight = window.innerHeight;
+    const viewportWidth = window.innerWidth;
+    const smallestSide = Math.min(viewportWidth, viewportHeight);
+
+    console.log('viewport smallestSide', smallestSide);
+
+    let keepLooping = true;
+    const maxLoop = 200;
+    let loopCounter = 0;
+
+    const frameSize = document.getElementById('frame').offsetWidth;
+    console.log('viewport differences', frameSize, smallestSide);
+    const difference = (smallestSide / frameSize);
+    rootSelector.style.setProperty('--framescale',`${difference}`);
+
+}
+
 const handleSetGameSize = (size) => {
     console.log(size);
     maxTile = parseInt(size);
@@ -89,6 +115,10 @@ const handleSetGameSize = (size) => {
     const calculatedBoardSize = (tileSize * maxTile);
     rootSelector.style.setProperty('--boardsize',`${calculatedBoardSize}px`);
     handleReset();
+    autoSetGameSize();
+    //setTimeout(() => {
+        //autoSetGameSize();
+    //}, 200);
 }
 
 const handleClick = (e, skipSound = false) => {

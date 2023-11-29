@@ -31,5 +31,6 @@ window.addEventListener("orientationchange", autoSetGameSize);
 screen.orientation.addEventListener("change", autoSetGameSize);
 
 document.getElementById('frame').addEventListener(clickOrTouch, (e) => {e.preventDefault()});
+document.getElementById('frame').addEventListener('touchend', detectDoubleTapClosure());
 document.body.addEventListener('touchend', detectDoubleTapClosure());
 

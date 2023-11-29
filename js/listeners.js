@@ -30,3 +30,5 @@ window.addEventListener("resize", autoSetGameSize);
 window.addEventListener("orientationchange", autoSetGameSize);
 screen.orientation.addEventListener("change", autoSetGameSize);
 
+document.getElementById('frame').addEventListener(clickOrTouch, (e) => {e.preventDefault()});
+

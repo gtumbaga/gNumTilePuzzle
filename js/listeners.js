@@ -30,9 +30,9 @@ window.addEventListener("resize", autoSetGameSize);
 window.addEventListener("orientationchange", autoSetGameSize);
 screen.orientation.addEventListener("change", autoSetGameSize);
 
-document.getElementById('frame').addEventListener(clickOrTouch, (e) => {e.preventDefault()});
-document.getElementById('frame').addEventListener('touchend', detectDoubleTapClosure());
-document.getElementById('tilesHolder').addEventListener(clickOrTouch, (e) => {e.preventDefault()});
-document.getElementById('tilesHolder').addEventListener('touchend', detectDoubleTapClosure());
-document.body.addEventListener('touchend', detectDoubleTapClosure());
+document.getElementById('frame').addEventListener(clickOrTouch, (e) => {e.preventDefault()}, { passive: false });
+document.getElementById('frame').addEventListener('touchend', detectDoubleTapClosure(), { passive: false });
+document.getElementById('tilesHolder').addEventListener(clickOrTouch, (e) => {e.preventDefault(), { passive: false }});
+document.getElementById('tilesHolder').addEventListener('touchend', detectDoubleTapClosure(), { passive: false });
+document.body.addEventListener('touchend', detectDoubleTapClosure(), { passive: false });
 

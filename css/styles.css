@@ -214,6 +214,7 @@ button {
   }
 
 .tilesHolder {
+    touch-action: manipulation;
     height: var(--boardsize);
     width: var(--boardsize);
     position: relative;

@@ -92,6 +92,9 @@ const autoSetGameSize = async () => {
     const difference = (smallestSide / frameSize);
     rootSelector.style.setProperty('--framescale',`${difference}`);
 
+    // scroll to top of doc if needed for some reason
+    window.scrollTo(0,0);
+
 }
 
 const handleSetGameSize = (size) => {

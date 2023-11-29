@@ -27,3 +27,5 @@ document.addEventListener('touchend', function (event) {
 }, false);
 
 window.addEventListener("resize", autoSetGameSize);
+screen.orientation.addEventListener("change", autoSetGameSize);
+

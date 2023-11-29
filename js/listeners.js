@@ -32,5 +32,7 @@ screen.orientation.addEventListener("change", autoSetGameSize);
 
 document.getElementById('frame').addEventListener(clickOrTouch, (e) => {e.preventDefault()});
 document.getElementById('frame').addEventListener('touchend', detectDoubleTapClosure());
+document.getElementById('tilesHolder').addEventListener(clickOrTouch, (e) => {e.preventDefault()});
+document.getElementById('tilesHolder').addEventListener('touchend', detectDoubleTapClosure());
 document.body.addEventListener('touchend', detectDoubleTapClosure());
 

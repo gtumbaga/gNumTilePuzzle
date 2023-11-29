@@ -191,6 +191,7 @@ button {
 }
 
   .frame:before {
+    touch-action: manipulation;
     border-radius: 2px;
     bottom: -16px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
@@ -201,6 +202,7 @@ button {
     top: -16px;
   }
   .frame:after {
+    touch-action: manipulation;
     border-radius: 2px;
     bottom: -20px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
